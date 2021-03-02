@@ -6,24 +6,21 @@ import styled from 'styled-components'
       border: 1px solid #cccccc;
       width: 30vh;
     `;
-
+    const Button = styled.button`
+      background: transparent;
+      border-radius: 3px;
+      border: 2px solid black;
+      color: black;
+      margin: 0.5em 1em;
+      padding: 0.25em 1em;
+    `;
 export default class Coin extends Component {
-    constructor(props){
-      super(props);
-      this.handleClick = this.handleClick.bind(this)
-    }
     
-   handleClick(event){
+    
+   handleClick = (event) => {
      event.preventDefault();
      this.props.handleRefresh(this.props.ticker);
-     /*
-    const randomPercentage = 0.995 + Math.random() * 0.01;
-    this.setState(function(oldState){
-      return {
-        price: oldState.price*randomPercentage
-      };
-    });
-*/
+ 
    }
 
     render() {
@@ -32,15 +29,17 @@ export default class Coin extends Component {
               <Td>{this.props.name}</Td>
               <Td>{this.props.ticker}</Td>
               <Td>${this.props.price}</Td>
+              {this.props.showBalance ? <Td>{this.props.balance}</Td> : null}
               <Td>
                 <form action="#" method ="POST">
-                <button onClick= {this.handleClick}>REFRESH</button>
+                <Button onClick= {this.handleClick}>REFRESH</Button>
                 </form>
               </Td>
             </tr>
           );
     }
 }
+
 Coin.propTypes = {
   name: PropTypes.string.isRequired,
   ticker: PropTypes.string.isRequired,
