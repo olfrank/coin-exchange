@@ -6,16 +6,17 @@ import logo from './logo.svg';
 
 const H1 = styled.h1`
     font-size: 4rem;
+    color: rgb(194, 194, 194);
 `;
 const Img = styled.img`
     height: 8rem;
     pointer-events: none;
-    color: rgb(184, 63, 15);
+    color: rgb(184, 63, 15) ;
 `;
 
 
 const Header = styled.header`
-    background-color: #a622aa;
+    background: linear-gradient(to right, rgb(60, 53, 63), rgb(98, 67, 109) );;
     min-height: 20vh;
     display: flex;
     flex-direction: column;
@@ -31,7 +32,7 @@ export default class ExchangeHeader extends Component {
             <Header>
             <Img src={logo} alt="logo" />
             <H1>
-              OL FRANK'S COIN EXCHANGE
+              COIN TRACKER
             </H1>
           </Header>
         )
