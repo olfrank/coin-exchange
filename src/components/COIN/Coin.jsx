@@ -28,17 +28,17 @@ export default function Coin(props) {
 
    const handleBuy = (event) => {
     event.preventDefault();
-    if(props.balance >= props.price){
+    // if(props.balance >= props.price){
       props.handleTransaction( true, props.tickerId );
-    }
+    //}
     
   }
 
   const handleSell = (event) => {
     event.preventDefault();
-    if(props.balance > 0){
+    // if(props.balance > 0){
       props.handleTransaction( false, props.tickerId );
-    }
+    //}
 
   }
         return(

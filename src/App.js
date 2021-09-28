@@ -57,7 +57,7 @@ function App(){
   }
 
   const handleTransaction = (isBuy, valueChangeId) => {
-    var balanceChange = isBuy ? 1 : -1
+    var balanceChange = isBuy ? 1 : -1;
     const newcoinData = coinData.map( function(values){
       let newValues = { ...values };
       if(valueChangeId === values.key){
